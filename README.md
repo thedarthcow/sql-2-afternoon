@@ -28,6 +28,14 @@ SELECT a.name, b.name FROM some_table a JOIN another_table b ON a.some_id = b.so
 <br />
 
 1. Get all invoices where the `unit_price` on the `invoice_line` is greater than $0.99.
+
+SELECT *
+FROM invoice i
+JOIN invoice_line il ON il.invoice_id = i.invoice_id
+WHERE il.unit_price > 0.99;
+
+
+
 2. Get the `invoice_date`, customer `first_name` and `last_name`, and `total` from all invoices.
 3. Get the customer `first_name` and `last_name` and the support rep's `first_name` and `last_name` from all customers. 
     * Support reps are on the employee table.
